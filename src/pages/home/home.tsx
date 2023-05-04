@@ -3,7 +3,6 @@ import { Box } from "@mui/system";
 import React from "react";
 import HomePageIcon from "../../components/icons/homepage_icon";
 import { colors } from "../../constants/colors";
-import customStyles from "../../styles/customStyles.module.css";
 import PersonalVideoIcon from "@mui/icons-material/PersonalVideo";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 

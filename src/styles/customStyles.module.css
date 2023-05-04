@@ -9,3 +9,7 @@
     background-image: url("../assets/images/jb_hero.jpeg");
     opacity: 0.75;
 }
+
+.backgroundWhite {
+  background-color: #fff;
+}
