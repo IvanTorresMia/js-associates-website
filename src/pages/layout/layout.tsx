@@ -8,6 +8,9 @@ const Layout: React.FunctionComponent = () => {
   return (
     <Grid>
       <Box
+        position={"fixed"}
+        left={"0"}
+        right={"0"}
         display={"flex"}
         justifyContent={"space-between"}
         padding={"15px"}
