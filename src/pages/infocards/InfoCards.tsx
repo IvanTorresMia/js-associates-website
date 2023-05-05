@@ -24,7 +24,7 @@ const cardInfo = [
 
 const InfoCards: React.FunctionComponent = () => {
   return (
-    <Box>
+    <Box id="learn_more">
       <Typography textAlign={"center"} variant="h3">
         Let use help you!
       </Typography>

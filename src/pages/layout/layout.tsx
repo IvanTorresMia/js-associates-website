@@ -1,8 +1,9 @@
-import { Grid, Link, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import customStyles from "../../styles/customStyles.module.css";
+import { Link } from "react-scroll";
 
 const Layout: React.FunctionComponent = () => {
   return (
@@ -21,20 +22,39 @@ const Layout: React.FunctionComponent = () => {
           <Typography variant="h6">JB Associates</Typography>
         </Box>
         <Box display={"flex"} justifyContent={"space-between"}>
-          <Link href="/" padding={"12px"} underline="none" color="inherit">
-            Home
-          </Link>
-          <Link
-            href="/about-us"
-            padding={"12px"}
-            underline="none"
-            color="inherit"
-          >
-            About us
-          </Link>
-          <Link padding={"12px"} underline="none" color="inherit">
-            What we do
-          </Link>
+          <Box padding={"10px"}>
+            <Link
+              smooth={true}
+              hashSpy={true}
+              duration={500}
+              offset={-100}
+              to="home"
+            >
+              Home
+            </Link>
+          </Box>
+          <Box padding={"10px"}>
+            <Link
+              smooth={true}
+              hashSpy={true}
+              duration={500}
+              offset={-100}
+              to="learn_more"
+            >
+              What we do
+            </Link>
+          </Box>
+          <Box padding={"10px"}>
+            <Link
+              smooth={true}
+              hashSpy={true}
+              duration={500}
+              offset={-100}
+              to="aboutus"
+            >
+              About us
+            </Link>
+          </Box>
         </Box>
       </Box>
       <Outlet />

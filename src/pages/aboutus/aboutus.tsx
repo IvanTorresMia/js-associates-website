@@ -6,7 +6,7 @@ import byron from "../../assets/images/byron.png";
 
 const AboutUs: React.FunctionComponent = () => {
   return (
-    <Box paddingTop={"40px"}>
+    <Box paddingTop={"40px"} id="aboutus">
       <Typography marginBottom={"50px"} variant="h2" textAlign={"center"}>
         Meet the team!
       </Typography>
