@@ -49,7 +49,7 @@ const Layout: React.FunctionComponent = () => {
               smooth={true}
               hashSpy={true}
               duration={500}
-              offset={-100}
+              offset={-50}
               to="aboutus"
             >
               About us

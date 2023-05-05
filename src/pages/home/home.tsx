@@ -29,8 +29,10 @@ const Home: React.FunctionComponent = () => {
             </Box>
             <Box marginTop={"20px"} display={"flex"}>
               <Button variant="text">Schedule a meeting!</Button>
-              <Box marginTop={"-3px"} marginLeft={"6px"}>
-                <PersonalVideoIcon />
+              <Box>
+                <PersonalVideoIcon
+                  style={{ marginBottom: "-14px", color: colors.primaryBlue }}
+                />
               </Box>
             </Box>
           </Box>
