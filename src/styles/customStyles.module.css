@@ -4,12 +4,8 @@
     100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
-
-.heroImage {
-    background-image: url("../assets/images/jb_hero.jpeg");
-    opacity: 0.75;
-}
-
-.backgroundWhite {
-  background-color: #fff;
+@media only screen and (max-width: 1200px) {
+  .homeContainer {
+    padding-top: 90px;
+  }
 }

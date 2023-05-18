@@ -1,11 +1,25 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import customStyles from "../../styles/customStyles.module.css";
 import { Link } from "react-scroll";
+import jbLogo from "../../assets/images/jb_logo.jpg";
+import { useNavigate, useLocation } from "react-router-dom";
+import { colors } from "../../constants/colors";
 
 const Layout: React.FunctionComponent = () => {
+  const [navColor, setNavColor] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setNavColor(true);
+    } else {
+      setNavColor(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
   return (
     <Grid>
       <Box
@@ -16,10 +30,11 @@ const Layout: React.FunctionComponent = () => {
         zIndex={"10"}
         justifyContent={"space-between"}
         padding={"15px"}
-        className={`${customStyles.boxShadow} ${customStyles.backgroundWhite}`}
+        bgcolor={navColor ? colors.primaryBlue : ""}
+        style={{ transition: "0.5s" }}
       >
-        <Box marginLeft={"10px"} marginTop={"2px"}>
-          <Typography variant="h6">JB Associates</Typography>
+        <Box width={"60px"} marginLeft={"10px"} marginTop={"2px"}>
+          <img style={{ width: "100%" }} src={jbLogo} alt="jb associates" />
         </Box>
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box padding={"10px"}>
@@ -54,6 +69,9 @@ const Layout: React.FunctionComponent = () => {
             >
               About us
             </Link>
+          </Box>
+          <Box padding={"10px"} onClick={() => navigate("/jobs")}>
+            Jobs
           </Box>
         </Box>
       </Box>
