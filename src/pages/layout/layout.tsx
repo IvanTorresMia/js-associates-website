@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography, createTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -11,6 +11,7 @@ import { colors } from "../../constants/colors";
 const Layout: React.FunctionComponent = () => {
   const [navColor, setNavColor] = useState(false);
   const location = useLocation();
+
   const navigate = useNavigate();
   const changeNavbarColor = () => {
     if (window.scrollY >= 80) {
@@ -45,7 +46,9 @@ const Layout: React.FunctionComponent = () => {
               offset={-100}
               to="home"
             >
-              Home
+              <Typography color={navColor ? colors.primaryWhite : ""}>
+                Home
+              </Typography>
             </Link>
           </Box>
           <Box padding={"10px"}>
@@ -53,10 +56,12 @@ const Layout: React.FunctionComponent = () => {
               smooth={true}
               hashSpy={true}
               duration={500}
-              offset={-100}
+              offset={-73}
               to="learn_more"
             >
-              What we do
+              <Typography color={navColor ? colors.primaryWhite : ""}>
+                What we do
+              </Typography>
             </Link>
           </Box>
           <Box padding={"10px"}>
@@ -67,11 +72,15 @@ const Layout: React.FunctionComponent = () => {
               offset={-50}
               to="aboutus"
             >
-              About us
+              <Typography color={navColor ? colors.primaryWhite : ""}>
+                About us
+              </Typography>
             </Link>
           </Box>
           <Box padding={"10px"} onClick={() => navigate("/jobs")}>
-            Jobs
+            <Typography color={navColor ? colors.primaryWhite : ""}>
+              Jobs
+            </Typography>
           </Box>
         </Box>
       </Box>

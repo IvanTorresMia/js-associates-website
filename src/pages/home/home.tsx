@@ -27,7 +27,7 @@ const Home: React.FunctionComponent = () => {
       <Grid item xs={12} sm={12} md={12} lg={6} margin={"auto"}>
         {" "}
         <Box width={"80%"} margin={"auto"}>
-          <Typography variant="h2">
+          <Typography variant="h1">
             Bridging the gap between talent and opportunity and finance
           </Typography>
           <Box marginTop={"25px"}>
@@ -48,7 +48,14 @@ const Home: React.FunctionComponent = () => {
         </Box>
       </Grid>
 
-      <Grid xs={12} sm={12} md={12} lg={6}>
+      <Grid
+        xs={12}
+        sm={12}
+        md={12}
+        lg={6}
+        display={"flex"}
+        justifyContent={"center"}
+      >
         <HomePageIcon />
       </Grid>
 
