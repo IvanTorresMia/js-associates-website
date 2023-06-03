@@ -1,50 +1,101 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Divider, Grid, Paper, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { colors } from "../../constants/colors";
+import { theme } from "../../theme";
+import WorkingPeopleImage from "../../assets/images/wokriing_people_jb.jpeg";
+import Footer from "../footer/Footer";
+interface Props {
+  id: number;
+  title: string;
+  description: string;
+  longDescription: string;
+}
+
+const jobsAvailable: Props[] = [
+  {
+    id: 1,
+    title: "Sales force",
+    description: "you will sell some stuff",
+    longDescription: "you will sell even more stuff so go crazy with studying",
+  },
+  {
+    id: 1,
+    title: "Sales force",
+    description: "you will sell some stuff",
+    longDescription: "you will sell even more stuff so go crazy with studying",
+  },
+  {
+    id: 1,
+    title: "Sales force",
+    description: "you will sell some stuff",
+    longDescription: "you will sell even more stuff so go crazy with studying",
+  },
+  {
+    id: 1,
+    title: "Sales force",
+    description: "you will sell some stuff",
+    longDescription: "you will sell even more stuff so go crazy with studying",
+  },
+];
 
 export const Jobs: React.FunctionComponent = () => {
-  const [fileBase64, setFileBase64] = useState<string>("");
-
-  function convertFile(files: FileList | null) {
-    if (files) {
-      const fileRef = files[0] || "";
-      const fileType: string = fileRef.type || "";
-      console.log("This file upload is of type:", fileType);
-      const reader = new FileReader();
-      reader.readAsBinaryString(fileRef);
-      reader.onload = (ev: any) => {
-        // convert it to base64
-        setFileBase64(`data:${fileType};base64,${btoa(ev.target.result)}`);
-      };
-    }
-  }
-
-  const testFile = () => {
-    const formData = new FormData();
-
-    formData.append("file", fileBase64);
-
-    console.log(formData);
-  };
   return (
-    <Grid container paddingTop={"75px"}>
-      <Grid item xs={12} style={{ backgroundColor: colors.primaryBlue }}>
-        <Typography
-          color={colors.primaryWhite}
-          textAlign={"center"}
-          variant="h1"
+    <>
+      <Grid container paddingTop={theme.spacing(12)} spacing={2}>
+        <Grid
+          item
+          xs={12}
+          style={{ backgroundColor: colors.primaryBlue }}
+          padding={theme.spacing(4)}
         >
-          Jobs
-        </Typography>
-        <input type="file" onChange={(e) => convertFile(e.target.files)} />
-        <Button onClick={testFile} variant="contained">
-          Test file submit
-        </Button>
+          <Typography textAlign={"center"} color={"secondary"} variant="h1">
+            Jobs
+          </Typography>
+          <Divider />
+          <Typography
+            paddingTop={theme.spacing(2)}
+            textAlign={"center"}
+            color={"secondary"}
+            variant="subtitle1"
+          >
+            Join out team and be part of world domination
+          </Typography>
+        </Grid>
       </Grid>
 
-      {fileBase64.indexOf("application/pdf") > -1 && (
-        <embed src={fileBase64} width="800px" height="2100px" />
-      )}
-    </Grid>
+      <Grid container spacing={2} padding={theme.spacing(8)}>
+        <Grid item xs={12} xl={6}>
+          <img src={WorkingPeopleImage} alt="people working" />
+        </Grid>
+        <Grid item xs={12} xl={6}>
+          <Typography variant="h2">Join us!</Typography>
+          <Divider />
+          <Typography variant="subtitle2">
+            Join the work force and become a sick asset
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid container spacing={6} padding={theme.spacing(8)}>
+        <Grid item xs={12}>
+          <Typography variant="h1">Positions available</Typography>
+        </Grid>
+
+        {jobsAvailable.map((job, i) => (
+          <>
+            <Grid item xs={8} display={"flex"} justifyContent={"space-between"}>
+              <Typography variant="subtitle1" paddingRight={theme.spacing(2)}>
+                {job.title}
+              </Typography>
+              <Typography variant="subtitle2">{job.description}</Typography>
+              <Button variant="outlined">Apply</Button>
+            </Grid>
+            <Grid item xs={8}>
+              <Divider />
+            </Grid>
+          </>
+        ))}
+      </Grid>
+      <Footer />
+    </>
   );
 };

@@ -5,6 +5,9 @@ import Main from "./pages/main/Main";
 import { Jobs } from "./pages/jobs";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
+import AdminPortal from "./pages/AdmitPortal/AdmitPortal";
+import LoginToPortal from "./pages/AdmitPortal/Login";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
   return (
@@ -15,6 +18,15 @@ function App() {
             <Route index element={<Main />} />
             <Route path={"jobs"} element={<Jobs />} />
           </Route>
+          <Route path="/admin-portal" element={<AdminPortal />} />
+          <Route
+            path="login-portal"
+            element={
+              <AuthRoute>
+                <LoginToPortal />
+              </AuthRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

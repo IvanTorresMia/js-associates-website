@@ -13,6 +13,9 @@ export const theme = createTheme({
     primary: {
       main: colors.primaryBlue,
     },
+    secondary: {
+      main: colors.primaryWhite,
+    },
   },
   typography: {
     // big titles

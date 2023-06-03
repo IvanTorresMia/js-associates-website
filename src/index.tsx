@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { getApps } from "firebase/app";
+import reportWebVitals from "./reportWebVitals";
+import { initializeApp } from "firebase/app";
+import { config } from "./config/config";
+
+export const app =
+  getApps().length === 0 ? initializeApp(config.firebaseConfig) : getApps()[0];
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
