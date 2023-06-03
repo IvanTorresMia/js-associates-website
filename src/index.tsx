@@ -5,17 +5,20 @@ import App from "./App";
 import { getApps } from "firebase/app";
 import reportWebVitals from "./reportWebVitals";
 import { initializeApp } from "firebase/app";
-import { config } from "./config/config";
+import { config } from "../config/config";
+import { AuthProvider } from "./providers/authProvider";
 
 export const app =
-  getApps().length === 0 ? initializeApp(config.firebaseConfig) : getApps()[0];
+  getApps().length === 0 ? initializeApp(config) : getApps()[0];
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );
 

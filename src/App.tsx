@@ -22,9 +22,9 @@ function App() {
           <Route
             path="login-portal"
             element={
-              <AuthRoute>
-                <LoginToPortal />
-              </AuthRoute>
+              // <AuthRoute>
+              <LoginToPortal />
+              // </AuthRoute>
             }
           />
         </Routes>

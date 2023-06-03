@@ -6,8 +6,6 @@ import { app } from "../../index";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-const auth = getAuth(app);
-
 type InputType = {
   email: string;
   password: string;
@@ -16,6 +14,7 @@ type InputType = {
 
 const LoginToPortal: React.FunctionComponent = () => {
   const navigate = useNavigate();
+  const auth = getAuth(app);
   const {
     control,
     register,
