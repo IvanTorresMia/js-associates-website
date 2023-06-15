@@ -18,13 +18,20 @@ function App() {
             <Route index element={<Main />} />
             <Route path={"jobs"} element={<Jobs />} />
           </Route>
-          <Route path="/admin-portal" element={<AdminPortal />} />
+          <Route
+            path="/admin-portal"
+            element={
+              <AuthRoute>
+                <AdminPortal />
+              </AuthRoute>
+            }
+          />
           <Route
             path="login-portal"
             element={
-              // <AuthRoute>
-              <LoginToPortal />
-              // </AuthRoute>
+              <AuthRoute>
+                <LoginToPortal />
+              </AuthRoute>
             }
           />
         </Routes>
