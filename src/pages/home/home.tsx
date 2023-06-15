@@ -26,6 +26,7 @@ const Home: React.FunctionComponent = () => {
       container
       style={colorGradient}
       paddingTop={largeScreen ? theme.spacing(20) : ""}
+      id="home"
     >
       <Grid item xs={12} sm={12} md={12} lg={6} margin={"auto"}>
         {" "}

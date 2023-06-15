@@ -79,7 +79,7 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-73}
+                  offset={-100}
                   to="learn_more"
                 >
                   <Typography color={navColor ? colors.primaryWhite : ""}>
@@ -92,7 +92,7 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-50}
+                  offset={-100}
                   to="aboutus"
                 >
                   <Typography color={navColor ? colors.primaryWhite : ""}>
