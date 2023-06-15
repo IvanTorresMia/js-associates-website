@@ -18,7 +18,7 @@ const iconStyle = {
 };
 
 const colorGradient = {
-  backgroundImage: `linear-gradient(to right, #fff 0%, ${colors.primaryBlue} 100%)`,
+  backgroundImage: `linear-gradient(to right, #fff 0%, ${colors.primary} 100%)`,
 };
 
 const cardInfo = [

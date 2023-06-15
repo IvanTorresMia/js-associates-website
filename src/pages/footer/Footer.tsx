@@ -9,7 +9,7 @@ const Footer: React.FunctionComponent = () => {
     <Grid
       marginTop={"60px"}
       height={"300px"}
-      style={{ backgroundColor: colors.primaryBlue }}
+      style={{ backgroundColor: colors.primary }}
     >
       <Box>
         <Typography

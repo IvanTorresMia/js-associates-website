@@ -9,12 +9,12 @@ import HomePageIcon from "../../components/icons/homepage_icon";
 import customStyles from "../../styles/customStyles.module.css";
 
 const buttonStyle = {
-  backgroundColor: colors.primaryBlue,
+  backgroundColor: colors.primary,
   borderRadius: "30px",
 };
 
 const colorGradient = {
-  backgroundImage: `linear-gradient(to right, #fff 0%, ${colors.primaryBlue} 100%)`,
+  backgroundImage: `linear-gradient(to right, #fff 0%, ${colors.primary} 100%)`,
 };
 
 const Home: React.FunctionComponent = () => {
@@ -36,12 +36,12 @@ const Home: React.FunctionComponent = () => {
             </Button>
           </Box>
           <Box marginTop={"20px"} display={"flex"}>
-            <Button variant="text" style={{ color: colors.primaryBlue }}>
+            <Button variant="text" style={{ color: colors.primary }}>
               Schedule a meeting!
             </Button>
             <Box>
               <PersonalVideoIcon
-                style={{ marginBottom: "-14px", color: colors.primaryBlue }}
+                style={{ marginBottom: "-14px", color: colors.primary }}
               />
             </Box>
           </Box>
@@ -74,9 +74,9 @@ const Home: React.FunctionComponent = () => {
           to="learn_more"
         >
           <Box display={"flex"}>
-            <Typography color={colors.primaryBlue}>Learn More</Typography>
+            <Typography color={colors.primary}>Learn More</Typography>
             <Box marginLeft={"5px"}>
-              <ArrowDownwardIcon style={{ color: colors.primaryBlue }} />
+              <ArrowDownwardIcon style={{ color: colors.primary }} />
             </Box>
           </Box>
         </Link>

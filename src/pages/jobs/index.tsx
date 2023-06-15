@@ -1,9 +1,10 @@
-import { Button, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid, Paper, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
 import WorkingPeopleImage from "../../assets/images/wokriing_people_jb.jpeg";
 import Footer from "../footer/Footer";
+
 interface Props {
   id: number;
   title: string;
@@ -38,14 +39,16 @@ const jobsAvailable: Props[] = [
   },
 ];
 
+// service Id service_39bm7as
+
 export const Jobs: React.FunctionComponent = () => {
   return (
     <>
-      <Grid container paddingTop={theme.spacing(12)} spacing={2}>
+      <Grid container paddingTop={theme.spacing(15)} spacing={2}>
         <Grid
           item
           xs={12}
-          style={{ backgroundColor: colors.primaryBlue }}
+          style={{ backgroundColor: colors.primary }}
           padding={theme.spacing(4)}
         >
           <Typography textAlign={"center"} color={"secondary"} variant="h1">
@@ -87,7 +90,7 @@ export const Jobs: React.FunctionComponent = () => {
                 {job.title}
               </Typography>
               <Typography variant="subtitle2">{job.description}</Typography>
-              <Button variant="outlined">Apply</Button>
+              <input type="file" />
             </Grid>
             <Grid item xs={8}>
               <Divider />

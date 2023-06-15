@@ -8,6 +8,7 @@ import jbLogo from "../../assets/images/jb_logo.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
+import { MainLogo } from "../../components/icons/logo";
 
 const Layout: React.FunctionComponent = () => {
   const location = useLocation();
@@ -35,13 +36,21 @@ const Layout: React.FunctionComponent = () => {
         zIndex={"10"}
         justifyContent={"space-between"}
         padding={theme.spacing(4)}
-        bgcolor={navColor ? colors.primaryBlue : ""}
+        bgcolor={navColor ? colors.primary : ""}
         style={{ transition: "0.5s" }}
       >
         <Box width={"60px"} marginLeft={"10px"} marginTop={"2px"}>
-          <img style={{ width: "100%" }} src={jbLogo} alt="jb associates" />
+          <MainLogo
+            width={theme.spacing(12)}
+            height={theme.spacing(7)}
+            color={!navColor ? colors.primary : colors.primaryWhite}
+          />
         </Box>
-        <Box display={"flex"} justifyContent={"space-between"}>
+        <Box
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
           {useReactLinks ? (
             <Button
               variant="outlined"
