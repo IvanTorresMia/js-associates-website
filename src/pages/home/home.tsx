@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { colors } from "../../constants/colors";
@@ -7,6 +7,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Link } from "react-scroll";
 import HomePageIcon from "../../components/icons/homepage_icon";
 import customStyles from "../../styles/customStyles.module.css";
+import { theme } from "../../theme";
 
 const buttonStyle = {
   backgroundColor: colors.primary,
@@ -18,11 +19,13 @@ const colorGradient = {
 };
 
 const Home: React.FunctionComponent = () => {
+  const largeScreen = useMediaQuery(theme.breakpoints.down("lg"));
+
   return (
     <Grid
       container
       style={colorGradient}
-      className={`${customStyles.homeContainer}`}
+      paddingTop={largeScreen ? theme.spacing(20) : ""}
     >
       <Grid item xs={12} sm={12} md={12} lg={6} margin={"auto"}>
         {" "}
