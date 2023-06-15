@@ -74,7 +74,7 @@ const Home: React.FunctionComponent = () => {
           smooth={true}
           hashSpy={true}
           duration={500}
-          offset={-73}
+          offset={-100}
           to="learn_more"
         >
           <Box display={"flex"}>
