@@ -22,7 +22,7 @@ const AboutUs: React.FunctionComponent = () => {
           marginBottom={"50px"}
         >
           <Box width={"50%"} paddingLeft={"100px"}>
-            <Typography variant="h5">Daniel Vargas</Typography>
+            <Typography variant="h2">Daniel Vargas</Typography>
             <Divider />
             <Typography
               marginBottom={"20px"}
@@ -31,7 +31,7 @@ const AboutUs: React.FunctionComponent = () => {
             >
               I am Daniel, I crush at drums and do other stuff
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle2">
               {" "}
               It has survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged. It was
@@ -51,7 +51,7 @@ const AboutUs: React.FunctionComponent = () => {
             <img style={{ width: "100%" }} src={byron} alt="daniel vargas" />
           </Box>
           <Box width={"50%"} paddingRight={"100px"}>
-            <Typography variant="h5">Byron Vargas</Typography>
+            <Typography variant="h2">Byron Vargas</Typography>
             <Divider />
             <Typography
               marginBottom={"20px"}
@@ -60,7 +60,7 @@ const AboutUs: React.FunctionComponent = () => {
             >
               I am Byron, CEO and unfortunately a Barcelona fan
             </Typography>
-            <Typography variant="subtitle1">
+            <Typography variant="subtitle2">
               {" "}
               It has survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged. It was

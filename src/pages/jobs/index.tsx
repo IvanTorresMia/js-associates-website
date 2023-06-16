@@ -4,44 +4,28 @@ import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
 import WorkingPeopleImage from "../../assets/images/wokriing_people_jb.jpeg";
 import Footer from "../footer/Footer";
-
-interface Props {
-  id: number;
-  title: string;
-  description: string;
-  longDescription: string;
-}
-
-const jobsAvailable: Props[] = [
-  {
-    id: 1,
-    title: "Sales force",
-    description: "you will sell some stuff",
-    longDescription: "you will sell even more stuff so go crazy with studying",
-  },
-  {
-    id: 1,
-    title: "Sales force",
-    description: "you will sell some stuff",
-    longDescription: "you will sell even more stuff so go crazy with studying",
-  },
-  {
-    id: 1,
-    title: "Sales force",
-    description: "you will sell some stuff",
-    longDescription: "you will sell even more stuff so go crazy with studying",
-  },
-  {
-    id: 1,
-    title: "Sales force",
-    description: "you will sell some stuff",
-    longDescription: "you will sell even more stuff so go crazy with studying",
-  },
-];
+import { jobsAvailable } from "../../api/utils/mockDataUtils";
+import { IJobs } from "../../types/jobTypes";
+import { ViewJobDetails } from "../../components/viewJobDetails";
 
 // service Id service_39bm7as
 
 export const Jobs: React.FunctionComponent = () => {
+  const [showJobDetails, setShowJobDetails] = useState<IJobs | null>(null);
+
+  const handleViewDetailsClick = (jobDetails: IJobs) => {
+    setShowJobDetails(jobDetails);
+  };
+
+  if (showJobDetails) {
+    return (
+      <ViewJobDetails
+        jobDetails={showJobDetails}
+        onClose={() => setShowJobDetails(null)}
+      />
+    );
+  }
+
   return (
     <>
       <Grid container paddingTop={theme.spacing(15)} spacing={2}>
@@ -90,7 +74,12 @@ export const Jobs: React.FunctionComponent = () => {
                 {job.title}
               </Typography>
               <Typography variant="subtitle2">{job.description}</Typography>
-              <input type="file" />
+              <Button
+                onClick={() => handleViewDetailsClick(job)}
+                variant="outlined"
+              >
+                View Job Description
+              </Button>
             </Grid>
             <Grid item xs={8}>
               <Divider />

@@ -25,17 +25,17 @@ const cardInfo = [
   {
     title: "Client-Centered",
     text: "Your needs at the heart of our process, customized solutions that put you first.",
-    icon: <PersonIcon style={iconStyle} />,
+    icon: <PersonIcon color="primary" style={iconStyle} />,
   },
   {
     title: "Engaged Search",
     text: "Active recruiting for exceptional talent. Your path to engaged, committed candidates.",
-    icon: <SearchIcon style={iconStyle} />,
+    icon: <SearchIcon color="primary" style={iconStyle} />,
   },
   {
     title: "Long-Term Partnerships",
     text: "Building relationships that last, partnering with you for sustained success.",
-    icon: <HandshakeIcon style={iconStyle} />,
+    icon: <HandshakeIcon color="primary" style={iconStyle} />,
   },
 ];
 
