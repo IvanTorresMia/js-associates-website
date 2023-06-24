@@ -48,7 +48,7 @@ const InfoCards: React.FunctionComponent = () => {
       justifyContent={"center"}
     >
       <Grid item xs={12}>
-        <Typography textAlign={"center"} variant="h3">
+        <Typography textAlign={"center"} variant="h2">
           Let use help you!
         </Typography>
       </Grid>

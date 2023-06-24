@@ -35,14 +35,14 @@ const Layout: React.FunctionComponent = () => {
         display={"flex"}
         zIndex={"10"}
         justifyContent={"space-between"}
-        padding={theme.spacing(4)}
+        padding={theme.spacing(2)}
         bgcolor={navColor ? colors.primary : ""}
         style={{ transition: "0.5s" }}
       >
         <Box width={"60px"} marginLeft={"10px"} marginTop={"2px"}>
           <MainLogo
             width={theme.spacing(12)}
-            height={theme.spacing(7)}
+            height={theme.spacing(12)}
             color={!navColor ? colors.primary : colors.primaryWhite}
           />
         </Box>
@@ -57,11 +57,11 @@ const Layout: React.FunctionComponent = () => {
               color={navColor ? "secondary" : "primary"}
               onClick={() => navigate("/")}
             >
-              Back to home
+              <Typography variant="subtitle1">Back to home</Typography>
             </Button>
           ) : (
             <>
-              <Box padding={"10px"}>
+              <Box>
                 <Link
                   smooth={true}
                   hashSpy={true}
@@ -69,7 +69,10 @@ const Layout: React.FunctionComponent = () => {
                   offset={-100}
                   to="home"
                 >
-                  <Typography color={navColor ? colors.primaryWhite : ""}>
+                  <Typography
+                    variant="subtitle1"
+                    color={navColor ? colors.primaryWhite : ""}
+                  >
                     Home
                   </Typography>
                 </Link>
@@ -82,7 +85,10 @@ const Layout: React.FunctionComponent = () => {
                   offset={-100}
                   to="learn_more"
                 >
-                  <Typography color={navColor ? colors.primaryWhite : ""}>
+                  <Typography
+                    variant="subtitle1"
+                    color={navColor ? colors.primaryWhite : ""}
+                  >
                     What we do
                   </Typography>
                 </Link>
@@ -95,13 +101,19 @@ const Layout: React.FunctionComponent = () => {
                   offset={-100}
                   to="aboutus"
                 >
-                  <Typography color={navColor ? colors.primaryWhite : ""}>
+                  <Typography
+                    variant="subtitle1"
+                    color={navColor ? colors.primaryWhite : ""}
+                  >
                     About us
                   </Typography>
                 </Link>
               </Box>
               <Box padding={"10px"} onClick={() => navigate("/jobs")}>
-                <Typography color={navColor ? colors.primaryWhite : ""}>
+                <Typography
+                  variant="subtitle1"
+                  color={navColor ? colors.primaryWhite : ""}
+                >
                   Jobs
                 </Typography>
               </Box>

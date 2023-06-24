@@ -6,16 +6,18 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { IJobs } from "../types/jobTypes";
+import { Jobs } from "../types/jobTypes";
 import { theme } from "../theme";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 interface IProps {
-  jobDetails: IJobs;
+  jobDetails: Jobs;
   onClose: () => void;
 }
+
+// TODO: implement email js to submit resume and a form.
 export function ViewJobDetails({ jobDetails, onClose }: IProps) {
   const [applyingDetails, setApplyingDetails] = useState({
     firstName: "",

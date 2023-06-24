@@ -1,21 +1,49 @@
 import { Box, Button, Divider, Grid, Paper, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
 import WorkingPeopleImage from "../../assets/images/wokriing_people_jb.jpeg";
 import Footer from "../footer/Footer";
 import { jobsAvailable } from "../../api/utils/mockDataUtils";
-import { IJobs } from "../../types/jobTypes";
+import { IJobs, Jobs } from "../../types/jobTypes";
 import { ViewJobDetails } from "../../components/viewJobDetails";
+import {
+  collection,
+  getFirestore,
+  onSnapshot,
+  query,
+} from "firebase/firestore";
+import { app } from "../..";
 
 // service Id service_39bm7as
 
-export const Jobs: React.FunctionComponent = () => {
-  const [showJobDetails, setShowJobDetails] = useState<IJobs | null>(null);
+export const JobsView: React.FunctionComponent = () => {
+  const [showJobDetails, setShowJobDetails] = useState<Jobs | null>(null);
+  const [jobsAvailable, setJobsAvailable] = useState<Jobs[] | []>([]);
+  const db = getFirestore(app);
 
-  const handleViewDetailsClick = (jobDetails: IJobs) => {
+  const handleViewDetailsClick = (jobDetails: Jobs) => {
     setShowJobDetails(jobDetails);
   };
+
+  const fetchJobs = useCallback(() => {
+    onSnapshot(query(collection(db, "jobs")), (snapshot) => {
+      const list: Jobs[] = [];
+      for (const job of snapshot.docs) {
+        const data = { ...(job.data() as any), id: job.id };
+        console.log(data);
+        list.push(data);
+      }
+      console.log(list);
+      console.log("hello");
+
+      setJobsAvailable(list);
+    });
+  }, []);
+
+  useEffect(() => {
+    return () => fetchJobs();
+  }, [fetchJobs]);
 
   if (showJobDetails) {
     return (

@@ -4,3 +4,10 @@ export interface IJobs {
   description: string;
   longDescription: string;
 }
+
+export type Jobs = {
+  id: string;
+  title: string;
+  description: string;
+  longDescription: string;
+};

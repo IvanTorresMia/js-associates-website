@@ -17,7 +17,6 @@ const LoginToPortal: React.FunctionComponent = () => {
   const auth = getAuth(app);
   const {
     control,
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm<InputType>();

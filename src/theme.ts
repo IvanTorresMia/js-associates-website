@@ -16,6 +16,9 @@ export const theme = createTheme({
     secondary: {
       main: colors.primaryWhite,
     },
+    error: {
+      main: colors.red,
+    },
   },
   typography: {
     // big titles
@@ -23,17 +26,22 @@ export const theme = createTheme({
       fontSize: "56px",
     },
     h2: {
-      fontWeight: 600,
+      fontWeight: 500,
+      fontSize: "34px",
+      lineHeight: "44px",
+    },
+    h3: {
+      fontWeight: 500,
       fontSize: "24px",
       lineHeight: "44px",
     },
     // Medium Titles
     subtitle1: {
-      fontWeight: 400,
-      fontSize: "22px",
+      fontWeight: 300,
+      fontSize: "20px",
       lineHeight: "28px",
       "@media (max-width:1500px)": {
-        fontSize: "20px",
+        fontSize: "18px",
       },
     },
     // Small Titles
