@@ -7,7 +7,7 @@ import {
 } from "react-hook-form";
 import { app } from "..";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { Button, Grid, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { theme } from "../theme";
 import { useNavigate } from "react-router-dom";
 
@@ -35,12 +35,17 @@ export default function CreateJob() {
 
   return (
     <form onSubmit={handleSubmit(onValidSubmit)}>
+      <Box padding={theme.spacing(2)}>
+        <Button variant="outlined" onClick={() => navigate("/admin-portal")}>
+          Back to portal
+        </Button>
+      </Box>
       <Grid
         container
         spacing={2}
         width={"40%"}
         margin={"auto"}
-        padding={theme.spacing(8)}
+        padding={theme.spacing(2)}
       >
         <Grid item xs={12}>
           <Typography textAlign={"center"} variant="h1">

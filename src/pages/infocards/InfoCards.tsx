@@ -72,7 +72,7 @@ const InfoCards: React.FunctionComponent = () => {
               alignItems={"center"}
             >
               <Box>{card.icon}</Box>
-              <Typography variant="h2">{card.title}</Typography>
+              <Typography variant="h3">{card.title}</Typography>
               <Divider />
               <Typography textAlign={"center"} variant="subtitle2">
                 {card.text}

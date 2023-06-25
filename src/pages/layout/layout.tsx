@@ -1,14 +1,11 @@
-import { Button, Grid, Typography, createTheme } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
-import customStyles from "../../styles/customStyles.module.css";
 import { Link } from "react-scroll";
-import jbLogo from "../../assets/images/jb_logo.jpg";
 import { useNavigate, useLocation } from "react-router-dom";
 import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
-import { MainLogo } from "../../components/icons/logo";
 
 const Layout: React.FunctionComponent = () => {
   const location = useLocation();
@@ -40,11 +37,12 @@ const Layout: React.FunctionComponent = () => {
         style={{ transition: "0.5s" }}
       >
         <Box width={"60px"} marginLeft={"10px"} marginTop={"2px"}>
-          <MainLogo
-            width={theme.spacing(12)}
-            height={theme.spacing(12)}
-            color={!navColor ? colors.primary : colors.primaryWhite}
-          />
+          <Typography
+            variant="h1"
+            color={`${navColor ? "secondary" : "primary"}`}
+          >
+            JB
+          </Typography>
         </Box>
         <Box
           display={"flex"}
@@ -52,13 +50,15 @@ const Layout: React.FunctionComponent = () => {
           alignItems={"center"}
         >
           {useReactLinks ? (
-            <Button
-              variant="outlined"
-              color={navColor ? "secondary" : "primary"}
-              onClick={() => navigate("/")}
-            >
-              <Typography variant="subtitle1">Back to home</Typography>
-            </Button>
+            <Box>
+              <Button
+                variant="outlined"
+                color={navColor ? "secondary" : "primary"}
+                onClick={() => navigate("/")}
+              >
+                <Typography variant="subtitle1">Back to home</Typography>
+              </Button>
+            </Box>
           ) : (
             <>
               <Box>
@@ -70,7 +70,7 @@ const Layout: React.FunctionComponent = () => {
                   to="home"
                 >
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     Home
@@ -86,7 +86,7 @@ const Layout: React.FunctionComponent = () => {
                   to="learn_more"
                 >
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     What we do
@@ -102,7 +102,7 @@ const Layout: React.FunctionComponent = () => {
                   to="aboutus"
                 >
                   <Typography
-                    variant="subtitle1"
+                    variant="subtitle2"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     About us
@@ -111,7 +111,7 @@ const Layout: React.FunctionComponent = () => {
               </Box>
               <Box padding={"10px"} onClick={() => navigate("/jobs")}>
                 <Typography
-                  variant="subtitle1"
+                  variant="subtitle2"
                   color={navColor ? colors.primaryWhite : ""}
                 >
                   Jobs

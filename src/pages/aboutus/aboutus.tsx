@@ -7,7 +7,7 @@ import byron from "../../assets/images/byron.png";
 const AboutUs: React.FunctionComponent = () => {
   return (
     <Box paddingTop={"40px"} id="aboutus">
-      <Typography marginBottom={"50px"} variant="h1" textAlign={"center"}>
+      <Typography marginBottom={"50px"} variant="h2" textAlign={"center"}>
         Meet the team!
       </Typography>
       <Box
@@ -22,7 +22,7 @@ const AboutUs: React.FunctionComponent = () => {
           marginBottom={"50px"}
         >
           <Box width={"50%"} paddingLeft={"100px"}>
-            <Typography variant="h2">Daniel Vargas</Typography>
+            <Typography variant="h3">Daniel Vargas</Typography>
             <Divider />
             <Typography
               marginBottom={"20px"}
@@ -51,7 +51,7 @@ const AboutUs: React.FunctionComponent = () => {
             <img style={{ width: "100%" }} src={byron} alt="daniel vargas" />
           </Box>
           <Box width={"50%"} paddingRight={"100px"}>
-            <Typography variant="h2">Byron Vargas</Typography>
+            <Typography variant="h3">Byron Vargas</Typography>
             <Divider />
             <Typography
               marginBottom={"20px"}

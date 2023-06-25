@@ -8,6 +8,7 @@ import { Link } from "react-scroll";
 import HomePageIcon from "../../components/icons/homepage_icon";
 import customStyles from "../../styles/customStyles.module.css";
 import { theme } from "../../theme";
+import { MainLogo } from "../../components/icons/logo";
 
 const buttonStyle = {
   backgroundColor: colors.primary,
@@ -25,13 +26,13 @@ const Home: React.FunctionComponent = () => {
     <Grid
       container
       style={colorGradient}
-      paddingTop={largeScreen ? theme.spacing(20) : ""}
+      paddingTop={largeScreen ? theme.spacing(20) : theme.spacing(8)}
       id="home"
     >
       <Grid item xs={12} sm={12} md={12} lg={6} margin={"auto"}>
         {" "}
         <Box width={"80%"} margin={"auto"}>
-          <Typography variant="h1">
+          <Typography variant="h2">
             Bridging the gap between talent and opportunity and finance
           </Typography>
           <Box marginTop={"25px"}>
@@ -60,7 +61,7 @@ const Home: React.FunctionComponent = () => {
         display={"flex"}
         justifyContent={"center"}
       >
-        <HomePageIcon />
+       <MainLogo width="600px" height="600px" color={colors.primary} />
       </Grid>
 
       <Grid

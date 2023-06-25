@@ -23,12 +23,12 @@ export const theme = createTheme({
   typography: {
     // big titles
     h1: {
+      fontWeight: 600,
       fontSize: "56px",
     },
     h2: {
-      fontWeight: 500,
-      fontSize: "34px",
-      lineHeight: "44px",
+      fontWeight: 400,
+      fontSize: "56px",
     },
     h3: {
       fontWeight: 500,
@@ -37,8 +37,8 @@ export const theme = createTheme({
     },
     // Medium Titles
     subtitle1: {
-      fontWeight: 300,
-      fontSize: "20px",
+      fontWeight: 400,
+      fontSize: "100px",
       lineHeight: "28px",
       "@media (max-width:1500px)": {
         fontSize: "18px",
