@@ -36,7 +36,6 @@ const AdminPortal: React.FunctionComponent = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const user = useAuth();
   const db = getFirestore(app);
   const navigate = useNavigate();
 
@@ -45,7 +44,6 @@ const AdminPortal: React.FunctionComponent = () => {
       const list: Jobs[] = [];
       for (const job of snapshot.docs) {
         const data = { ...(job.data() as any), id: job.id };
-        console.log(data);
         list.push(data);
       }
       console.log(list);
@@ -76,7 +74,7 @@ const AdminPortal: React.FunctionComponent = () => {
   };
 
   useEffect(() => {
-    return () => fetchJobs();
+    fetchJobs();
   }, [fetchJobs]);
 
   if (showJobDetails) {
@@ -87,6 +85,8 @@ const AdminPortal: React.FunctionComponent = () => {
       />
     );
   }
+
+  if (jobsAvailable.length === 0) return <Grid>No jobs created</Grid>;
 
   return (
     <>
@@ -112,7 +112,7 @@ const AdminPortal: React.FunctionComponent = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} paddingTop={theme.spacing(8)}>
-          <Typography textAlign={"center"} variant="h2">
+          <Typography textAlign={"center"} variant="h3">
             Current Job Listings
           </Typography>
         </Grid>

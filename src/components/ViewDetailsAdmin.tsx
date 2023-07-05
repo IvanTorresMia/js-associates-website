@@ -20,7 +20,6 @@ export default function ViewDetailsAdmin({ jobDetails, onClose }: IProps) {
 
   const {
     control,
-    register,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -54,8 +53,8 @@ export default function ViewDetailsAdmin({ jobDetails, onClose }: IProps) {
       </Box>
 
       <Grid container spacing={2} width={"40%"} margin={"auto"}>
-        <Grid item xs={12}>
-          <Typography textAlign={"center"} variant="h1">
+        <Grid item xs={12} paddingBottom={theme.spacing(3)}>
+          <Typography color={"primary"} textAlign={"center"} variant="h1">
             Job details
           </Typography>
         </Grid>

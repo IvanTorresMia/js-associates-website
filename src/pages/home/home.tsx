@@ -21,11 +21,12 @@ const colorGradient = {
 
 const Home: React.FunctionComponent = () => {
   const largeScreen = useMediaQuery(theme.breakpoints.down("lg"));
-
+  console.log(largeScreen);
   return (
     <Grid
       container
       style={colorGradient}
+      height={!largeScreen ? "100vh" : "100%"}
       paddingTop={largeScreen ? theme.spacing(20) : theme.spacing(8)}
       id="home"
     >
@@ -61,7 +62,7 @@ const Home: React.FunctionComponent = () => {
         display={"flex"}
         justifyContent={"center"}
       >
-       <MainLogo width="600px" height="600px" color={colors.primary} />
+        <MainLogo width="600px" height="600px" color={colors.primary} />
       </Grid>
 
       <Grid

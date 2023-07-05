@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -36,12 +36,12 @@ const Layout: React.FunctionComponent = () => {
         bgcolor={navColor ? colors.primary : ""}
         style={{ transition: "0.5s" }}
       >
-        <Box width={"60px"} marginLeft={"10px"} marginTop={"2px"}>
+        <Box width={theme.spacing(30)} marginLeft={"10px"} marginTop={"2px"}>
           <Typography
-            variant="h1"
+            variant="h3"
             color={`${navColor ? "secondary" : "primary"}`}
           >
-            JB
+            JB associates
           </Typography>
         </Box>
         <Box
@@ -61,7 +61,7 @@ const Layout: React.FunctionComponent = () => {
             </Box>
           ) : (
             <>
-              <Box>
+              <Box padding={"10px"}>
                 <Link
                   smooth={true}
                   hashSpy={true}
@@ -70,23 +70,24 @@ const Layout: React.FunctionComponent = () => {
                   to="home"
                 >
                   <Typography
-                    variant="subtitle2"
+                    variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     Home
                   </Typography>
                 </Link>
               </Box>
+
               <Box padding={"10px"}>
                 <Link
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-100}
+                  offset={-80}
                   to="learn_more"
                 >
                   <Typography
-                    variant="subtitle2"
+                    variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     What we do
@@ -98,11 +99,11 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-100}
+                  offset={-80}
                   to="aboutus"
                 >
                   <Typography
-                    variant="subtitle2"
+                    variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
                   >
                     About us
@@ -111,7 +112,7 @@ const Layout: React.FunctionComponent = () => {
               </Box>
               <Box padding={"10px"} onClick={() => navigate("/jobs")}>
                 <Typography
-                  variant="subtitle2"
+                  variant="subtitle1"
                   color={navColor ? colors.primaryWhite : ""}
                 >
                   Jobs

@@ -1,11 +1,10 @@
-import { Box, Button, Divider, Grid, Paper, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
 import { colors } from "../../constants/colors";
 import { theme } from "../../theme";
 import WorkingPeopleImage from "../../assets/images/wokriing_people_jb.jpeg";
 import Footer from "../footer/Footer";
-import { jobsAvailable } from "../../api/utils/mockDataUtils";
-import { IJobs, Jobs } from "../../types/jobTypes";
+import { Jobs } from "../../types/jobTypes";
 import { ViewJobDetails } from "../../components/viewJobDetails";
 import {
   collection,
@@ -42,7 +41,7 @@ export const JobsView: React.FunctionComponent = () => {
   }, []);
 
   useEffect(() => {
-    return () => fetchJobs();
+    fetchJobs();
   }, [fetchJobs]);
 
   if (showJobDetails) {
