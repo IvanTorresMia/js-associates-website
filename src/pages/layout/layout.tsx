@@ -37,28 +37,40 @@ const Layout: React.FunctionComponent = () => {
         style={{ transition: "0.5s" }}
       >
         <Box width={theme.spacing(30)} marginLeft={"10px"} marginTop={"2px"}>
-          <Typography
-            variant="h3"
-            color={`${navColor ? "secondary" : "primary"}`}
-          >
-            JB associates
-          </Typography>
+          {useReactLinks ? (
+            <Typography
+              paddingTop={theme.spacing(2)}
+              variant="h3"
+              color={`${navColor ? "secondary" : "primary"}`}
+            >
+              JB associates
+            </Typography>
+          ) : (
+            <Typography
+              variant="h3"
+              color={`${navColor ? "secondary" : "primary"}`}
+            >
+              JB associates
+            </Typography>
+          )}
         </Box>
         <Box
           display={"flex"}
           justifyContent={"space-between"}
-          alignItems={"center"}
+          // alignItems={"center"}
         >
           {useReactLinks ? (
-            <Box>
-              <Button
-                variant="outlined"
-                color={navColor ? "secondary" : "primary"}
-                onClick={() => navigate("/")}
-              >
-                <Typography variant="subtitle1">Back to home</Typography>
-              </Button>
-            </Box>
+            <>
+              <Box padding={"20px"}>
+                <Button
+                  variant="outlined"
+                  color={navColor ? "secondary" : "primary"}
+                  onClick={() => navigate("/")}
+                >
+                  <Typography variant="subtitle1">Back to home</Typography>
+                </Button>
+              </Box>
+            </>
           ) : (
             <>
               <Box padding={"10px"}>
