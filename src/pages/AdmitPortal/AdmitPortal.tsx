@@ -8,11 +8,9 @@ import {
   deleteDoc,
 } from "firebase/firestore";
 import { Box, Button, Divider, Grid, Modal, Typography } from "@mui/material";
-import { useAuth } from "../../providers/authProvider";
 import React, { useCallback, useEffect, useState } from "react";
 import { app } from "../../index";
 import { theme } from "../../theme";
-import { colors } from "../../constants/colors";
 import ViewDetailsAdmin from "../../components/ViewDetailsAdmin";
 import { Jobs } from "../../types/jobTypes";
 import { useNavigate } from "react-router-dom";

@@ -1,9 +1,9 @@
 export const config = {
-  apiKey: "AIzaSyAoDJ2uEnFGNjQjBVtKgz3oboxjEMQPvFQ",
-  authDomain: "jb-associates-9ba35.firebaseapp.com",
-  projectId: "jb-associates-9ba35",
-  storageBucket: "jb-associates-9ba35.appspot.com",
-  messagingSenderId: "911209072891",
-  appId: "1:911209072891:web:3196da6ac9ae1d6b9d085e",
-  measurementId: "G-7MHE2S4LBP",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId:process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
