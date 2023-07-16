@@ -108,6 +108,8 @@ export default function ViewDetailsAdmin({ jobDetails, onClose }: IProps) {
                 type="text"
                 variant="outlined"
                 fullWidth
+                multiline
+                rows={6}
               />
             )}
           />

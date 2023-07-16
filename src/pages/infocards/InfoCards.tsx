@@ -1,24 +1,11 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import PersonIcon from "@mui/icons-material/Person";
 import HandshakeIcon from "@mui/icons-material/Handshake";
 import SearchIcon from "@mui/icons-material/Search";
-import { colors } from "../../constants/colors";
 
 const iconStyle = {
   fontSize: "100px",
-};
-
-const colorGradient = {
-  backgroundImage: `linear-gradient(to right, #fff 0%, ${colors.primary} 100%)`,
 };
 
 const cardInfo = [

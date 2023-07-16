@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";

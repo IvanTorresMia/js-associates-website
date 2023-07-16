@@ -13,6 +13,7 @@ import {
   query,
 } from "firebase/firestore";
 import { app } from "../..";
+import ScrollToTop from "../../components/ScrollToTop";
 
 // service Id service_39bm7as
 
@@ -55,6 +56,7 @@ export const JobsView: React.FunctionComponent = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Grid container paddingTop={theme.spacing(15)} spacing={2}>
         <Grid
           item
@@ -78,10 +80,14 @@ export const JobsView: React.FunctionComponent = () => {
       </Grid>
 
       <Grid container spacing={2} padding={theme.spacing(8)}>
-        <Grid item xs={12} xl={6}>
-          <img src={WorkingPeopleImage} alt="people working" />
+        <Grid item xs={12} lg={6} width={theme.spacing(8)}>
+          <img
+            style={{ width: "100%" }}
+            src={WorkingPeopleImage}
+            alt="people working"
+          />
         </Grid>
-        <Grid item xs={12} xl={6}>
+        <Grid item xs={12} lg={6}>
           <Typography variant="h2">Join us!</Typography>
           <Divider />
           <Typography variant="subtitle2">

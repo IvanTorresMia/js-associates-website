@@ -14,6 +14,7 @@ import { theme } from "../../theme";
 import ViewDetailsAdmin from "../../components/ViewDetailsAdmin";
 import { Jobs } from "../../types/jobTypes";
 import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 const modalStyle = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -35,6 +36,7 @@ const AdminPortal: React.FunctionComponent = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const db = getFirestore(app);
+  const auth = getAuth(app);
   const navigate = useNavigate();
 
   const fetchJobs = useCallback(() => {
@@ -100,7 +102,14 @@ const AdminPortal: React.FunctionComponent = () => {
           </Button>
         </Box>
         <Box>
-          <Button variant="outlined">Log out</Button>
+          <Button
+            onClick={async () => {
+              await auth.signOut();
+            }}
+            variant="outlined"
+          >
+            Log out
+          </Button>
         </Box>
       </Box>
       <Grid container padding={theme.spacing(8)} spacing={2}>

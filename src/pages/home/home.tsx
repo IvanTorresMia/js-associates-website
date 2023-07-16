@@ -5,8 +5,6 @@ import { colors } from "../../constants/colors";
 import PersonalVideoIcon from "@mui/icons-material/PersonalVideo";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { Link } from "react-scroll";
-import HomePageIcon from "../../components/icons/homepage_icon";
-import customStyles from "../../styles/customStyles.module.css";
 import { theme } from "../../theme";
 import { MainLogo } from "../../components/icons/logo";
 
@@ -76,7 +74,7 @@ const Home: React.FunctionComponent = () => {
           smooth={true}
           hashSpy={true}
           duration={500}
-          offset={-100}
+          offset={-80}
           to="learn_more"
         >
           <Box display={"flex"}>
