@@ -38,7 +38,7 @@ export const theme = createTheme({
     // Medium Titles
     subtitle1: {
       fontWeight: 400,
-      fontSize: "100px",
+      fontSize: "18px",
       lineHeight: "28px",
       "@media (max-width:1500px)": {
         fontSize: "18px",

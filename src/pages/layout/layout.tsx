@@ -11,8 +11,10 @@ const Layout: React.FunctionComponent = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [navColor, setNavColor] = useState(false);
+  const [currentActiveLink, setCurrentActiveLink] = useState<string>("home");
 
   const useReactLinks = location.pathname === "/jobs";
+  console.log(window.location.href);
 
   const changeNavbarColor = () => {
     if (window.scrollY >= 80) {
@@ -20,6 +22,9 @@ const Layout: React.FunctionComponent = () => {
     } else {
       setNavColor(false);
     }
+
+    const currentPath = window.location.href.split("#")[1];
+    setCurrentActiveLink(currentPath);
   };
 
   window.addEventListener("scroll", changeNavbarColor);
@@ -78,12 +83,15 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-100}
+                  offset={-90}
                   to="home"
                 >
                   <Typography
                     variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
+                    borderBottom={
+                      currentActiveLink === "home" ? "1px solid white" : ""
+                    }
                   >
                     Home
                   </Typography>
@@ -95,12 +103,17 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-80}
+                  offset={-70}
                   to="learn_more"
                 >
                   <Typography
                     variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
+                    borderBottom={
+                      currentActiveLink === "learn_more"
+                        ? "1px solid white"
+                        : ""
+                    }
                   >
                     What we do
                   </Typography>
@@ -111,12 +124,15 @@ const Layout: React.FunctionComponent = () => {
                   smooth={true}
                   hashSpy={true}
                   duration={500}
-                  offset={-80}
+                  offset={-70}
                   to="aboutus"
                 >
                   <Typography
                     variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
+                    borderBottom={
+                      currentActiveLink === "aboutus" ? "1px solid white" : ""
+                    }
                   >
                     About us
                   </Typography>
