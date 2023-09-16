@@ -19,7 +19,7 @@ const colorGradient = {
 
 const Home: React.FunctionComponent = () => {
   const largeScreen = useMediaQuery(theme.breakpoints.down("lg"));
-  console.log(largeScreen);
+
   return (
     <Grid
       container
@@ -68,6 +68,7 @@ const Home: React.FunctionComponent = () => {
         xs={12}
         display={"flex"}
         justifyContent={"center"}
+        alignItems={"center"}
         height={"130px"}
       >
         <Link
@@ -77,10 +78,15 @@ const Home: React.FunctionComponent = () => {
           offset={-80}
           to="learn_more"
         >
-          <Box display={"flex"}>
-            <Typography color={colors.primary}>Learn More</Typography>
-            <Box marginLeft={"5px"}>
-              <ArrowDownwardIcon style={{ color: colors.primary }} />
+          <Box display={"flex"} alignItems={"center"}>
+            <Typography variant="subtitle1" color={colors.primary}>
+              Learn More
+            </Typography>
+            <Box marginLeft={"5px"} paddingTop={0.5}>
+              <ArrowDownwardIcon
+                fontSize="small"
+                style={{ color: colors.primary }}
+              />
             </Box>
           </Box>
         </Link>
