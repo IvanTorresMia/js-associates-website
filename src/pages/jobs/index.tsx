@@ -57,7 +57,7 @@ export const JobsView: React.FunctionComponent = () => {
   return (
     <>
       <ScrollToTop />
-      <Grid container paddingTop={theme.spacing(15)} spacing={2}>
+      <Grid container>
         <Grid
           item
           xs={12}
@@ -65,11 +65,10 @@ export const JobsView: React.FunctionComponent = () => {
           padding={theme.spacing(4)}
         >
           <Typography textAlign={"center"} color={"secondary"} variant="h1">
-            Jobs
+            Careers
           </Typography>
           <Divider />
           <Typography
-            paddingTop={theme.spacing(2)}
             textAlign={"center"}
             color={"secondary"}
             variant="subtitle1"
@@ -79,7 +78,7 @@ export const JobsView: React.FunctionComponent = () => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={2} padding={theme.spacing(8)}>
+      <Grid container padding={theme.spacing(8)}>
         <Grid item xs={12} lg={6} width={theme.spacing(8)}>
           <img
             style={{ width: "100%" }}
@@ -87,7 +86,7 @@ export const JobsView: React.FunctionComponent = () => {
             alt="people working"
           />
         </Grid>
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} lg={6} padding={theme.spacing(8)}>
           <Typography variant="h2">Join us!</Typography>
           <Divider />
           <Typography variant="subtitle2">

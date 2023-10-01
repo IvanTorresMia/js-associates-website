@@ -28,55 +28,45 @@ const Layout: React.FunctionComponent = () => {
   };
 
   window.addEventListener("scroll", changeNavbarColor);
+
+  const underlineColor = navColor ? colors.primaryWhite : colors.primary;
   return (
     <Grid>
       <Box
-        position={"fixed"}
+        position={useReactLinks ? "relative" : "fixed"}
         left={"0"}
         right={"0"}
         display={"flex"}
         zIndex={"10"}
         justifyContent={"space-between"}
+        alignItems={"center"}
         padding={theme.spacing(2)}
         bgcolor={navColor ? colors.primary : ""}
         style={{ transition: "0.5s" }}
       >
         <Box width={theme.spacing(30)} marginLeft={"10px"} marginTop={"2px"}>
-          {useReactLinks ? (
-            <Typography
-              paddingTop={theme.spacing(2)}
-              variant="h3"
-              color={`${navColor ? "secondary" : "primary"}`}
-            >
-              JB associates
-            </Typography>
-          ) : (
+          <Button
+            variant="text"
+            style={{ textTransform: "none" }}
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <Typography
               variant="h3"
               color={`${navColor ? "secondary" : "primary"}`}
             >
+              {" "}
               JB associates
             </Typography>
-          )}
+          </Button>
         </Box>
         <Box
           display={"flex"}
           justifyContent={"space-between"}
-          // alignItems={"center"}
+          alignItems={"center"}
         >
-          {useReactLinks ? (
-            <>
-              <Box padding={"20px"}>
-                <Button
-                  variant="outlined"
-                  color={navColor ? "secondary" : "primary"}
-                  onClick={() => navigate("/")}
-                >
-                  <Typography variant="subtitle1">Back to home</Typography>
-                </Button>
-              </Box>
-            </>
-          ) : (
+          {!useReactLinks && (
             <>
               <Box padding={"10px"}>
                 <Link
@@ -90,7 +80,9 @@ const Layout: React.FunctionComponent = () => {
                     variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
                     borderBottom={
-                      currentActiveLink === "home" ? "1px solid white" : ""
+                      currentActiveLink === "home"
+                        ? `1px solid ${underlineColor}`
+                        : ""
                     }
                   >
                     Home
@@ -111,7 +103,7 @@ const Layout: React.FunctionComponent = () => {
                     color={navColor ? colors.primaryWhite : ""}
                     borderBottom={
                       currentActiveLink === "learn_more"
-                        ? "1px solid white"
+                        ? `1px solid ${underlineColor}`
                         : ""
                     }
                   >
@@ -131,7 +123,9 @@ const Layout: React.FunctionComponent = () => {
                     variant="subtitle1"
                     color={navColor ? colors.primaryWhite : ""}
                     borderBottom={
-                      currentActiveLink === "aboutus" ? "1px solid white" : ""
+                      currentActiveLink === "aboutus"
+                        ? `1px solid ${underlineColor}`
+                        : ""
                     }
                   >
                     About us
@@ -143,7 +137,7 @@ const Layout: React.FunctionComponent = () => {
                   variant="subtitle1"
                   color={navColor ? colors.primaryWhite : ""}
                 >
-                  Jobs
+                  Careers
                 </Typography>
               </Box>
             </>

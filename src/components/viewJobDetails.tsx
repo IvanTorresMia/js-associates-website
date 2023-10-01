@@ -41,12 +41,7 @@ export function ViewJobDetails({ jobDetails, onClose }: IProps) {
 
   return (
     <>
-      <Box
-        paddingTop={theme.spacing(17)}
-        display={"flex"}
-        alignItems={"center"}
-        marginLeft={theme.spacing(8)}
-      >
+      <Box display={"flex"} alignItems={"center"} marginLeft={theme.spacing(4)}>
         <Box>
           <ArrowBackIcon color="primary" fontSize="small" />
         </Box>

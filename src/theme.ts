@@ -19,8 +19,13 @@ export const theme = createTheme({
     error: {
       main: colors.red,
     },
+    info: {
+      main: colors.primaryBlack
+    }
+
   },
   typography: {
+    fontFamily: 'Montserrat',
     // big titles
     h1: {
       fontWeight: 600,
@@ -38,19 +43,19 @@ export const theme = createTheme({
     // Medium Titles
     subtitle1: {
       fontWeight: 400,
-      fontSize: "18px",
+      fontSize: "22px",
       lineHeight: "28px",
       "@media (max-width:1500px)": {
-        fontSize: "18px",
+        fontSize: "20px",
       },
     },
     // Small Titles
     subtitle2: {
       fontWeight: 500,
-      fontSize: "16px",
+      fontSize: "20px",
       lineHeight: "24px",
       "@media (max-width:1500px)": {
-        fontSize: "14px",
+        fontSize: "18px",
       },
     },
     // Big body for tables etc.
